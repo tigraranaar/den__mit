@@ -94,6 +94,9 @@
 					</script>
 				</section>
 
+				<section data-background-iframe="https://www.youtube.com/embed/mOLZP4DP7JA"
+						 data-background-interactive data-menu-title="Лекция на Youtube">
+				</section>
 
 				<section data-markdown data-separator-notes="^Note:">
 					<script type="text/template">
@@ -217,7 +220,6 @@
 					</script>
 				</section>
 
-
 				<section data-markdown data-separator-notes="^Note:">
 					<script type="text/template">
 						Медиана
@@ -251,176 +253,43 @@
 						называют то ее значения, для которого выполняются
 						равенство вероятностей событий, то есть, плотность
 						вероятностей справа и слева одинаковы и равны половине (0,5).
-
-
-
-
-						Note:
-						Определения
 					</script>
 				</section>
+
 				<section data-markdown data-separator-notes="^Note:">
 					<script type="text/template">
-						### Арифметическая прогрессия
-						Арифметическая прогрессия - это числовая последовательность
-						вида $a_{n+1} = a_n + d $,  
-						где $a_n$ - $n$-ый член последовательности,  
-						а $d$ - разность.
-
-						Note:
-						Арифметическая прогрессия - это числовая последовательность,
-						где последующий равен предыдущему плюс разность.
+						$$
+						P({-\infty} < X_p < M_e) = P(M_e < X_p < {\infty})
+						$$
+						$$
+						F(M_e) - F({-\infty}) = F({\infty}) - F(M_e)
+						$$
+						$$
+						F(M_e) = 1 - F(M_e) => 2F(M_e) = 1
+						$$
+						$$
+						F(M_e) = 0,5
+						$$
 					</script>
 				</section>
-				
-				<section data-markdown data-separator-notes="^Note:">
-					<script type="text/template">
-						### Примеры
-						$$
-							a_n = \{7n+1\} = \{ 8, 15, 22, 29, 36, 43, 50 , \ldots \}
-						$$
-						
-						Note:
-						Примеры
-					</script>
-				</section>
-				
-				<section data-markdown data-separator-notes="^Note:">
-					<script type="text/template">
-						### Сумма членов арифметической прогрессии
-						
-						$$
-							S_n = \sum_{i=1}^n a_i = \dfrac{a_1+a_n}{2} n 
-							 = \dfrac{2a_1+d(n-1)}{2}
-						$$
-
-						Note:
-						Два способа подсчета суммы арифметической прогрессии
-					</script>
-				</section>
-
 
 				<section data-markdown data-separator-notes="^Note:">
 					<script type="text/template">
 						### Примеры
-						$$
-						a_n = \{7n+1\} = \{ 8, 15, 22, 29, 36, 43, 50 , \ldots \}
-						$$
 
-						Note:
-						Примеры
-					</script>
-				</section>
-				<section data-background-iframe="https://www.youtube.com/embed/0m2xKgHorBM"
-				data-background-interactive data-menu-title="Лекция на Youtube">
-				</section>
-
-				<section data-markdown data-separator-notes="^Note:">
-					<script type="text/template">
-						Программа
-						---------
-						
-						Прогрессия: $\{ 6n-5 \} = \{1, 7, 13, 19, \ldots\}$  
-						S<input type="number" id="arithProgress"> = <output id="arithProgressOut"></output>
-
-						Note:
-						Определения
-					</script>
-				</section>
-				
-				<section data-markdown data-separator-notes="^Note:">
-					<script type="text/template">
-						Программа
-						---------
-						```
-						let arithProgressFunc = n => (1 + (6*n-5))*(n/2);
-						arithProgress.onkeyup = val => {
-							arithProgressOut.innerHTML = 
-							    arithProgressFunc(val.target.value);
-						};
-
-						```
+						Например, выборка {11, 9, 3, 5, 5} после упорядочивания
+						превращается в {3, 5, 5, 9, 11} и её медианой является
+						число 5. Если в выборке чётное число элементов, медиана
+						может быть не определена однозначно: для числовых данных
+						чаще всего используют полусумму двух соседних
+						значений (то есть медиану набора {1, 3, 5, 7} принимают равной 4)
 					</script>
 				</section>
 
 				<section data-markdown data-separator-notes="^Note:">
 					<script type="text/template">
-						Геометрическая прогрессия
+						Мода
 						-----------
-						
-						Note:
-						Определения
-					</script>
-				</section>
-
-				<section data-markdown data-separator-notes="^Note:">
-					<script type="text/template">
-						### Геометрическая прогрессия
-						Геометрическая прогрессия - это числовая последовательность
-						вида $b_{n+1} = b_nq $,  
-						где $b_n$ - $n$-ый член последовательности,  
-						а $q$ - знаменатель.
-
-						Note:
-						Геометрическая прогрессия - это числовая последовательность,
-						где последующий равен предыдущему помноженный на знаменатель
-					</script>
-				</section>
-				
-				<section data-markdown data-separator-notes="^Note:">
-					<script type="text/template">
-						### Примеры
-						$$
-							b_n = \{2n\} = \{2, 4, 8, 16, 32, 64 , \ldots \}
-						$$
-						
-						Note:
-						Примеры
-					</script>
-				</section>
-				
-				<section data-markdown data-separator-notes="^Note:">
-					<script type="text/template">
-						### Сумма членов геометрической прогрессии
-						
-						$$ 
-							S_n = \sum_{i=1}^n b_i =
-							\begin{cases}
-								\dfrac{b_1-b_1q^n}{1-q} &, \text{если } q \ne 1 \\
-								nb_1 &, \text{если } q = 1
-							\end {cases}
-						$$
-
-						Note:
-						Сумма геометрической прогрессии
-					</script>
-				</section>
-				
-				<section data-markdown data-separator-notes="^Note:">
-					<script type="text/template">
-						### Произведение членов геометрической прогрессии
-						
-						$$ 
-							P_n = (b_1 \cdot b_n) ^ {\frac{n}{2}}
-						$$
-
-						Note:
-						Произведение геометрической прогрессии
-					</script>
-				</section>
-				
-				<section data-background-iframe="https://www.youtube.com/embed/b3ZHgQSNGmA"
-				data-background-interactive data-menu-title="Лекция на Youtube">
-				</section>
-
-				<section data-markdown data-separator-notes="^Note:">
-					<script type="text/template">
-						Программа
-						---------
-						
-						Прогрессия: $\{2, 6, 18, 54, \ldots\}$  
-						S<input type="number" id="geomProgressSum"> =  <output id="geomProgressSumOut"></output>  
-						P<input type="number" id="geomProgressMult"> =  <output id="geomProgressMultOut"></output>
 
 						Note:
 						Определения
@@ -429,76 +298,54 @@
 
 				<section data-markdown data-separator-notes="^Note:">
 					<script type="text/template">
-						Программа
-						---------
-						```
-						let geomProgressSumFunc = n => -(2* (1-3**n))/2;
-						geomProgressSum.onkeyup = val => {
-							geomProgressSumOut.innerHTML = 
-							  geomProgressSumFunc(val.target.value);
-						}
-						```
+						### Мода
+
+						— значение во множестве наблюдений, которое встречается
+						наиболее часто. (Мода = типичность.)
+
+						Note:
+						Определения
 					</script>
 				</section>
 
 				<section data-markdown data-separator-notes="^Note:">
 					<script type="text/template">
-						Программа
-						---------
-						```
-						let geomProgressMultFunc = n => (4*3**(n-1))**(n/2);
-						geomProgressMult.onkeyup = val => {
-							geomProgressMultOut.innerHTML = 
-							  geomProgressMultFunc(val.target.value);
-						}
-						```
+						Иногда в совокупности встречается более чем одна
+						мода (например: 6, 2, 6, 6, 8, 9, 9, 9, 0; мода — 6 и 9).
+						В этом случае можно сказать, что совокупность мультимодальна.
+						Из структурных средних величин только мода обладает таким
+						уникальным свойством. Как правило, мультимодальность
+						указывает на то, что набор данных не подчиняется
+						нормальному распределению.
 					</script>
 				</section>
-									
+
 				<section data-markdown data-separator-notes="^Note:">
 					<script type="text/template">
-						Числа Фибоначчи
+						$$
+						f(M_0) = max f(x)
+						$$
+					</script>
+				</section>
+
+				<section data-markdown data-separator-notes="^Note:">
+					<script type="text/template">
+						Мода как средняя величина употребляется чаще для данных,
+						имеющих нечисловую природу. Среди перечисленных цветов
+						автомобилей — белый, чёрный, синий металлик, белый,
+						синий металлик, белый — мода будет равна белому цвету.
+						При экспертной оценке с её помощью определяют наиболее популярн
+					</script>
+				</section>
+
+				<section data-background-iframe="https://www.youtube.com/embed/aE9tlkOJav4"
+						 data-background-interactive data-menu-title="Лекция на Youtube">
+				</section>
+
+				<section data-markdown data-separator-notes="^Note:">
+					<script type="text/template">
+						Математическое ожидание
 						-----------
-						
-						Note:
-						Определения
-					</script>
-				</section>
-
-				<section data-markdown data-separator-notes="^Note:">
-					<script type="text/template">
-						### Числа Фибоначчи
-						Числа Фибоначчи - числовая последовательность, где 
-						первые 2 члена равны 1, а все последующие сумме 2 предыдущих.
-
-						Note:
-						Числа Фибоначчи - числовая последовательность, где 
-						первые 2 члена равны 1, а все последующие сумме 2 предыдущих.
-					</script>
-				</section>
-				
-				<section data-markdown data-separator-notes="^Note:">
-					<script type="text/template">
-						### Числа Фибоначчи
-						$$
-							\{1, 1, 2, 3, 5, 8, 13, 21, 34, 55 , \ldots\}
-						$$
-						
-						Note:
-						Числа Фибоначчи
-					</script>
-				</section>
-					
-				<section data-background-iframe="https://www.youtube.com/embed/kayX8XTjL9E"
-				data-background-interactive data-menu-title="Лекция на Youtube">
-				</section>
-
-				<section data-markdown data-separator-notes="^Note:">
-					<script type="text/template">
-						Программа
-						---------
-						
-						F<input type="number" id="fibonacci"> =  <output id="fibonacciOut"></output>
 
 						Note:
 						Определения
@@ -507,32 +354,44 @@
 
 				<section data-markdown data-separator-notes="^Note:">
 					<script type="text/template">
-						Программа
-						---------
-						```
-						let fibonacciFunc = n => {
-							let f = [1,1];
-							if (n > 1) {
-								for (let i = 2; i < n; i++) {
-									f[i] = f[i-1] + f[i-2];
-								}
-							}
-							if (n == 1) return 1;
-							return f.join(', ');
-						}
-						fibonacci.onkeyup = val => {
-							fibonacciOut.innerHTML = fibonacciFunc(val.target.value);
-						}
-						```
+						### Математическое ожидание
+
+						— среднее значение случайной величины (распределение
+						вероятностей стационарной случайной величины) при
+						стремлении количества выборок или количества измерений
+						(иногда говорят — количества испытаний) её к бесконечности.
+
+						Note:
+						Определения
 					</script>
 				</section>
 
+				<section data-markdown data-separator-notes="^Note:">
+					<script type="text/template">
+						Среднее арифметическое одномерной случайной величины
+						конечного числа испытаний обычно называют оценкой
+						математического ожидания. При стремлении числа испытаний
+						стационарного случайного процесса к бесконечности
+						оценка математического ожидания стремится к
+						математическому ожиданию.
+					</script>
+				</section>
 
 				<section data-markdown data-separator-notes="^Note:">
 					<script type="text/template">
-						Сверхвозрастающая последовательность
+						Математическое ожидание M<sub>x</sub> случайной величины x равно
+
+						$$
+						M_x = \sum_{i=1}^k p_ix_i
+						$$
+					</script>
+				</section>
+
+				<section data-markdown data-separator-notes="^Note:">
+					<script type="text/template">
+						Дисперсия
 						-----------
-						
+
 						Note:
 						Определения
 					</script>
@@ -540,95 +399,38 @@
 
 				<section data-markdown data-separator-notes="^Note:">
 					<script type="text/template">
-						### Сверхвозрастающая последовательность
-						Последовательность натуральных чисел $s_1, s_2, \ldots$ -
-						сверхвозрастающая, если выполнено условие
-						$$\forall n > 1: S_{n+1} > \sum_{j=1}^nS_j$$
+						### Дисперсией случайной величины x
+
+						называется среднее значение квадрата
+						отклонения случайной величины от её
+						математического ожидания:
 
 						Note:
-						Последовательность натуральных чисел называется сверхвозрастающей,
-						если каждый последующий член больше сумме всех предыдущих.
+						Определения
 					</script>
-				</section>
-				
-				<section data-markdown data-separator-notes="^Note:">
-					<script type="text/template">
-						### Примеры
-						$$
-							\{2^n\} = \{1, 2, 4, 8, 16, 32, \ldots\}
-						$$
-						$$
-							\{2, 4, 11, 20\}
-						$$
-						
-						Note:
-						Примеры
-					</script>
-				</section>
-				
-				<section data-background-iframe="https://www.youtube.com/embed/c4OuLLwn-I0"
-				data-background-interactive data-menu-title="Лекция на Youtube">
 				</section>
 
 				<section data-markdown data-separator-notes="^Note:">
 					<script type="text/template">
-						### Крестики-нолики
-						
-						<div class="left">
-							<table class="tic-toe">
-								<tr>
-									<td data-score="1"></td>
-									<td data-score="2"></td>
-									<td data-score="4"></td>
-								</tr>
-								<tr>
-									<td data-score="8"></td>
-									<td data-score="16"></td>
-									<td data-score="32"></td>
-								</tr>
-								<tr>
-									<td data-score="64"></td>
-									<td data-score="128"></td>
-									<td data-score="256"></td>
-								</tr>
-							</table>
-						</div>
-						<div class="right">
-							<input id ="startGame" type="button" value="Начать игру"> <!-- .element: style="font-size:20pt;"-->  
-							<output id="winOut"></output>
-						</div>
-						<div class="clear"></div>						
-						Note:
-						Крестики-нолики
+						$$
+						D(X) = M(X^2) - (M(X))^2
+						$$
 					</script>
 				</section>
-				
+
 				<section data-markdown data-separator-notes="^Note:">
 					<script type="text/template">
-						### Ранцевый алгоритм шифрования
-						
-						<textarea cols="100" rows="5" id="encode"></textarea>  
-						q=<output id="q"></output>, r=<output id="r"></output>  
-						w=<output id="w"></output> <!-- .element: style="font-size:20pt;"-->  
-						Текст = <output id="resultEncode"></output>
-
-						Note:
-						Ранцевый алгоритм шифрования
+						Используя вероятности p<sub>i</sub> того, что величина x
+						принимает значения x<sub>i</sub>, эту формулу можно
+						переписать следующим образом:
+						$$
+						D_x = \sum_{i=1}^k p_i(x_i - M_x)^2
+						$$
 					</script>
 				</section>
-				
-				<section data-markdown data-separator-notes="^Note:">
-					<script type="text/template">
-						### Ранцевый алгоритм шифрования
-						
-						<label for="q1">q=</label> <input type="text" id="q1" value="">, <label for="r1">r=</label> <input type="text" id="r1" value="">  
-						<label for="w1">w=</label> <input type="text" id="w1" value="" style="width:400px">  
-						<label for="decode">Зашифрованная строка:</label>  <textarea cols="100" rows="5" id="decode"></textarea>  
-						Текст = <output id="resultDecode"></output>
 
-						Note:
-						Ранцевый алгоритм шифрования
-					</script>
+				<section data-background-iframe="https://www.youtube.com/embed/PawhrJ92alc"
+						 data-background-interactive data-menu-title="Лекция на Youtube">
 				</section>
 
 				<section data-markdown data-separator-notes="^Note:">
