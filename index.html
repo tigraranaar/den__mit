@@ -207,6 +207,39 @@
 
 				<section data-markdown data-separator-notes="^Note:">
 					<script type="text/template">
+						Программа
+						---------
+
+						Среднее арифметическое:
+
+						${x_1}$ <input type="number" id="x1">
+						${x_2}$ <input type="number" id="x2">
+						${x_3}$ <input type="number" id="x3"> <input type="button" id="arithMedResult" value="Вычислить">
+
+						${Sr}$ = <output id="arithMedRes">
+
+						Note:
+						Определения
+					</script>
+				</section>
+
+				<section data-markdown data-separator-notes="^Note:">
+					<script type="text/template">
+						Программа
+						---------
+						```
+						let meduimCol = 3;
+						let arithMediumFunc = (a, b, c) => ((a + b + c) / meduimCol);
+
+						arithMedResult.onclick = function () {
+							arithMedRes.innerHTML = arithMediumFunc(parseInt(x1.value), parseInt(x2.value), parseInt(x3.value));
+						}
+						```
+					</script>
+				</section>
+
+				<section data-markdown data-separator-notes="^Note:">
+					<script type="text/template">
 						### Примеры
 
 						В распределении 3, 4, 5, 6, 7 среднее арифметическое будет равно
@@ -615,155 +648,14 @@
 				]
 			});
 
-			let arithProgressFunc = n => (1 + (6*n-5))*(n/2);
-			let geomProgressSumFunc = n => -(2* (1-3**n))/2;
-			let geomProgressMultFunc = n => (4*3**(n-1))**(n/2);
-			let fibonacciFunc = n => {
-				let f = [1,1];
-				if (n > 1) {
-					for (let i = 2; i < n; i++) {
-						f[i] = f[i-1] + f[i-2];
-					}
-				}
-				if (n < 2) return 1;
-				return f.join(', ');
-			}
+			let meduimCol = 3;
+			let arithMediumFunc = (a, b, c) => ((a + b + c) / meduimCol);
+
 			//Запускаем программы только после полной загрузки
 			window.onload = () =>  {
 
-				let step = 0;
-				let x = [];
-				let o = [];
-				let subsetArrayX = [];
-				let subsetArrayO = [];
-				let isWinX = false;
-				let isWinO = false;
-				let win = [73, 146, 292, 448, 56, 7, 84, 273];
-				let td = document.querySelectorAll('.tic-toe td');
-				
-				const winFunction = set => {
-					if (set.length === 3) {
-						if (win.indexOf(arraySum(set)) > -1) {
-							return true;
-						}
-					}
-					return false;
-				}
-				
-				startGame.onclick = () => {
-					x = [];
-					o = [];
-					isWinO = false;
-					isWinX = false;
-					step = 0;
-					subsetArrayX = [];
-					subsetArrayO = [];
-					winOut.innerHTML = '';
-					td.forEach(element => {
-						element.innerHTML = '';
-					});
-
-					td.forEach( (clickTd, i) => {
-						td[i].onclick = element => {
-							if (element.explicitOriginalTarget != undefined) {
-								if (!isWinO && !isWinX) {
-									if (step % 2 === 0) {
-										x.push(parseInt(element.explicitOriginalTarget.attributes[0].nodeValue));
-										element.explicitOriginalTarget.innerHTML = 'X';
-									} else {
-										o.push(parseInt(element.explicitOriginalTarget.attributes[0].nodeValue));
-										element.explicitOriginalTarget.innerHTML = '0';
-									}
-									if (step > 3) {
-										if (step % 2 === 0) {
-											subsetArrayX = subSet(x);
-											isWinX = subsetArrayX.some(winFunction); 
-										} else {
-											subsetArrayO = subSet(o);
-											isWinO = subsetArrayO.some(winFunction); 
-										}
-									}
-									if (isWinO) {
-										winOut.innerHTML = 'Победили нолики';
-										return;
-									}
-									if (isWinX) {
-										winOut.innerHTML = 'Победили крестики';
-										return;
-									}
-									step++;
-									td[i].onclick = null;
-								}
-							}
-						}
-					})
-				}
-				
-
-
-
-				arithProgress.onkeyup = val => {
-					arithProgressOut.innerHTML = arithProgressFunc(val.target.value);
-				};
-				geomProgressSum.onkeyup = val => {
-					geomProgressSumOut.innerHTML = geomProgressSumFunc(val.target.value);
-				}
-				geomProgressMult.onkeyup = val => {
-					geomProgressMultOut.innerHTML = geomProgressMultFunc(val.target.value);
-				}
-				fibonacci.onkeyup = val => {
-					fibonacciOut.innerHTML = fibonacciFunc(val.target.value);
-				}
-
-				//Количество бит, необходимых для покрытия всех символов
-				let base = 16;
-				//Генерируем сверхвозрастающую последовательность, длинной в 16, т.к. чтобы покрыть все символы надо 16 бит
-				let ww = superIncreasingSequence( base );
-				w.innerHTML = ww;
-				//Считаем сумму элементов сверхвозрастающей последовательности
-				let summa = totalSum( ww );
-				//Находим ближайшее большее простое число к sumw
-				let qq = nextPrime( summa );
-				q.innerHTML = qq;
-				//Находим ближайшее меньшее простое число к q
-				let rr = previousPrime( qq );
-				r.innerHTML = rr;
-				//Генерируем открытый ключ
-				let beta = mod( ww, rr, qq );
-
-				encode.onkeyup = () => {
-					//Переводим символы в коды
-					let textChar = toCharacterCode(encode.value);
-					//Переводим все наши символы в бинарный вид с ведущими нулями
-					let a = integerDigit( textChar, 2, base );
-					//Получаем массив зашифрованных чисел
-					let chifr = textEncode( a, beta );
-					//Делим наши числа двойками, по следующему правилу 512*a+b
-					let ds = codeToCouple( chifr );
-					//Переводим нашу последовательность в строку
-					let encodeString = fromCharacterCode( ds, 255 ); 
-					resultEncode.innerHTML = encodeString;
-				}
-				decode.onkeyup = () => {
-					//Переводим строку в последовательность символов
-					let chifrSeq = toCharacterCode(  decode.value , -255 );
-					//Востанавливаем из двоек последовательность шифра
-					let shifr = coupleToCode( chifrSeq );
-					//Нахождение обратного числа по модулю
-					let s = reverse( r1.value, q1.value );
-					//Умножаем на мулььтипликативное число
-					let b = mod( shifr, s, q1.value );
-					//Создаем массив
-					let yd = generateArray( b.length );
-					//Заполняем его нулями
-					    yd = fillZero( yd, base );
-					//Декодируем нашу матрицу
-					let decodeString = textDecode( yd, b, w1.value.split(','), base );
-					//Переводим двоичный код в десятичный
-					let resultDigit = fromDigit(decodeString);
-					//Переводим нашу последовательность в строку
-					let result = fromCharacterCode( resultDigit); 
-					resultDecode.innerHTML = result;
+				arithMedResult.onclick = function () {
+					arithMedRes.innerHTML = arithMediumFunc(parseInt(x1.value), parseInt(x2.value), parseInt(x3.value));
 				}
 			}
 		</script>

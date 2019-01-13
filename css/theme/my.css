@@ -269,6 +269,15 @@ body {
   border: 1px solid white !important;
 }
 
+#arithMedResult {
+    width: 100px;
+    height:50px;
+}
+
+#arithMedRes {
+
+}
+
 /*********************************************
  * PRINT BACKGROUND
  *********************************************/
