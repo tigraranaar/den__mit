@@ -114,29 +114,69 @@
 
 				<section data-markdown data-separator-notes="^Note:">
 					<script type="text/template">
-						### Примеры
-						$$
-							\{ n^2 \} = \{1, 4, 9, \ldots, 81, 100, \ldots\}
-						$$
-						$$
-							\left\{ \dfrac{1}{n} \right\} = \left\{1, \dfrac{1}{2}, \dfrac{1}{3}, 
-										\ldots, \dfrac{1}{10}, \dfrac{1}{11}, \ldots\right\} 
-						$$
+						### Пример 1
 
-						[//]: коментарий
-						
-						Note:
-						Примеры последовательностей
+						В обувном магазине за день продали 30 пар
+						мужской обуви следующих размеров: 39, 41, 40, 42, 41,
+						40, 42, 44, 42, 43, 42, 41, 43, 39, 42, 39, 41, 43,
+						41, 38, 43, 42, 41, 40, 41, 38, 44, 40, 39, 44.
 					</script>
-				</section>
-				
-				<section data-background-iframe="https://www.youtube.com/embed/sQvrx6UFmf0"
-				data-background-interactive data-menu-title="Лекция на Youtube">
 				</section>
 
 				<section data-markdown data-separator-notes="^Note:">
 					<script type="text/template">
-						Арифметическая прогрессия
+						### Решение
+
+						Проведем группировку по отдельным значениям признака,
+						то есть по размеру обуви (дискретная группировка):
+
+						<div>
+							<table>
+								<tr class="border-table">
+									<td>x<sub>i</sub></td>
+									<td>38</td>
+									<td>39</td>
+									<td>40</td>
+									<td>41</td>
+									<td>42</td>
+									<td>43</td>
+									<td>44</td>
+									<td>&sum;</td>
+								</tr>
+								<tr class="border-table">
+									<td>m<sub>i</sub></td>
+									<td>2</td>
+									<td>4</td>
+									<td>5</td>
+									<td>7</td>
+									<td>6</td>
+									<td>4</td>
+									<td>3</td>
+									<td>30</td>
+								</tr>
+								<tr class="border-table">
+									<td>h<sub>i</sub></td>
+									<td>0,067</td>
+									<td>0,133</td>
+									<td>0,133</td>
+									<td>0,233</td>
+									<td>0,2</td>
+									<td>0,133</td>
+									<td>0,1</td>
+									<td>1</td>
+								</tr>
+							</table>
+						</div>
+					</script>
+				</section>
+				
+				<!--<section data-background-iframe="https://www.youtube.com/embed/sQvrx6UFmf0"
+				data-background-interactive data-menu-title="Лекция на Youtube">
+				</section>-->
+
+				<section data-markdown data-separator-notes="^Note:">
+					<script type="text/template">
+						Среднее арифметическое
 						-----------
 						
 						Note:
@@ -144,6 +184,81 @@
 					</script>
 				</section>
 
+				<section data-markdown data-separator-notes="^Note:">
+					<script type="text/template">
+						### Среднее арифметическое
+
+						— число, равное сумме всех чисел множества,
+						делённой на их количество. Является одной из
+						наиболее распространённых мер центральной
+						тенденции.
+
+						$$
+						M_x = \dfrac{\sum X_i}{n}
+						$$
+
+						Note:
+						Определения
+					</script>
+				</section>
+
+				<section data-markdown data-separator-notes="^Note:">
+					<script type="text/template">
+						### Примеры
+
+						В распределении 3, 4, 5, 6, 7 среднее арифметическое будет равно
+
+						$$
+						M_x = \dfrac{3+4+5+6+7}{5} = \dfrac{25}{5} = 5
+						$$
+
+						Note:
+						Примеры
+					</script>
+				</section>
+
+
+				<section data-markdown data-separator-notes="^Note:">
+					<script type="text/template">
+						Медиана
+						-----------
+
+						Note:
+						Определения
+					</script>
+				</section>
+
+				<section data-markdown data-separator-notes="^Note:">
+					<script type="text/template">
+						### Медиана (от лат. mediāna — середина)
+
+						— число, характеризующее выборку (например, набор чисел).
+						Если все элементы выборки различны, то медиана — это
+						такое число выборки, что ровно половина из элементов выборки
+						больше него, а другая половина меньше него. В более общем
+						случае медиану можно найти, упорядочив элементы выборки
+						по возрастанию или убыванию и взяв средний элемент.
+
+						Note:
+						Определения
+					</script>
+				</section>
+
+				<section data-markdown data-separator-notes="^Note:">
+					<script type="text/template">
+						Существуют и такие распределения, которые не имеют моды,
+						их называют антимодальными. Медианой случайной величины
+						называют то ее значения, для которого выполняются
+						равенство вероятностей событий, то есть, плотность
+						вероятностей справа и слева одинаковы и равны половине (0,5).
+
+
+
+
+						Note:
+						Определения
+					</script>
+				</section>
 				<section data-markdown data-separator-notes="^Note:">
 					<script type="text/template">
 						### Арифметическая прогрессия
@@ -184,6 +299,18 @@
 					</script>
 				</section>
 
+
+				<section data-markdown data-separator-notes="^Note:">
+					<script type="text/template">
+						### Примеры
+						$$
+						a_n = \{7n+1\} = \{ 8, 15, 22, 29, 36, 43, 50 , \ldots \}
+						$$
+
+						Note:
+						Примеры
+					</script>
+				</section>
 				<section data-background-iframe="https://www.youtube.com/embed/0m2xKgHorBM"
 				data-background-interactive data-menu-title="Лекция на Youtube">
 				</section>
