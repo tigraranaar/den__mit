@@ -1,663 +1,675 @@
 <!doctype html>
 <html>
-	<head>
-		<!-- meta -->
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-
-		<!-- title -->
-		<title>Математическая статистика</title>
-
-		<!-- load style -->
-		<link rel="stylesheet" href="css/reveal.css">
-		<link rel="stylesheet" href="css/theme/my.css">
-
-		<!-- Theme used for syntax highlighting of code -->
-		<link rel="stylesheet" href="lib/css/zenburn.css">
-
-		<!-- Printing and PDF exports -->
-		<script>
-			var link = document.createElement( 'link' );
-			link.rel = 'stylesheet';
-			link.type = 'text/css';
-			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
-			document.getElementsByTagName( 'head' )[0].appendChild( link );
-		</script>
-
-		<style>
-			.left {
-				float: left;
-				margin-left: 60px;
-			}
-			.right {
-				float: right;
-				margin-right: 60px;
-			}
-			.clear {
-				clear: both;
-			}
-			.reveal table.tic-toe {
-				border-collapse: separate !important;
-			}
-			td {
-				width: 40px;
-				height: 40px;
-				text-align: center !important;
-			}
-			td:nth-child(2) {
-				border-left: 1px solid white;
-				border-right: 1px solid white;
-			}
-
-		</style>
-	</head>
-	<body>
-		<div class="reveal">
-			<div class="slides">
-				<section data-markdown data-separator-notes="^Note:">
-					<script type="text/template">
-						Математическая статистика
-						==================
-
-						Note:
-						Титульный слайд
-					</script>
-				</section>
-
-				<section data-markdown data-separator-notes="^Note:">
-					<script type="text/template">
-						### Математическая статистика —
-
-						наука, разрабатывающая математические методы
-						систематизации и использования статистических
-						данных для научных и практических выводов.
-					</script>
-				</section>
-
-				<section data-markdown data-separator-notes="^Note:">
-					<script type="text/template">
-						Во многих своих разделах математическая статистика
-						опирается на теорию вероятностей, дающую возможность
-						оценить надёжность и точность выводов, делаемых на
-						основании ограниченного статистического материала
-						(напр., оценить необходимый объём выборки для получения
-						результатов требуемой точности при выборочном обследовании).
-					</script>
-				</section>
-
-				<section data-markdown data-separator-notes="^Note:">
-					<script type="text/template">
-						Генеральная совокупность рассматривается как случайная
-						величина ξ, а выборка – как n-мерная случайная
-						величина (ξ1, . . . , ξn), компоненты которой независимы
-						и одинаково распределены (так же как ξ).
-					</script>
-				</section>
-
-				<section data-background-iframe="https://www.youtube.com/embed/mOLZP4DP7JA"
-						 data-background-interactive data-menu-title="Лекция на Youtube">
-				</section>
-
-				<section data-markdown data-separator-notes="^Note:">
-					<script type="text/template">
-						Выборка
-						==================
-					</script>
-				</section>
-
-				<section data-markdown data-separator-notes="^Note:">
-					<script type="text/template">
-						### Выборка или выборочная совокупность —
-
-						часть генеральной совокупности элементов,
-						которая охватывается экспериментом (наблюдением, опросом).
-					</script>
-				</section>
-
-
-				<section data-markdown data-separator-notes="^Note:">
-					<script type="text/template">
-						### Пример 1
-
-						В обувном магазине за день продали 30 пар
-						мужской обуви следующих размеров: 39, 41, 40, 42, 41,
-						40, 42, 44, 42, 43, 42, 41, 43, 39, 42, 39, 41, 43,
-						41, 38, 43, 42, 41, 40, 41, 38, 44, 40, 39, 44.
-					</script>
-				</section>
-
-				<section data-markdown data-separator-notes="^Note:">
-					<script type="text/template">
-						### Решение
-
-						Проведем группировку по отдельным значениям признака,
-						то есть по размеру обуви (дискретная группировка):
-
-						<div>
-							<table>
-								<tr class="border-table">
-									<td>x<sub>i</sub></td>
-									<td>38</td>
-									<td>39</td>
-									<td>40</td>
-									<td>41</td>
-									<td>42</td>
-									<td>43</td>
-									<td>44</td>
-									<td>&sum;</td>
-								</tr>
-								<tr class="border-table">
-									<td>m<sub>i</sub></td>
-									<td>2</td>
-									<td>4</td>
-									<td>5</td>
-									<td>7</td>
-									<td>6</td>
-									<td>4</td>
-									<td>3</td>
-									<td>30</td>
-								</tr>
-								<tr class="border-table">
-									<td>h<sub>i</sub></td>
-									<td>0,067</td>
-									<td>0,133</td>
-									<td>0,133</td>
-									<td>0,233</td>
-									<td>0,2</td>
-									<td>0,133</td>
-									<td>0,1</td>
-									<td>1</td>
-								</tr>
-							</table>
-						</div>
-					</script>
-				</section>
-				
-				<!--<section data-background-iframe="https://www.youtube.com/embed/sQvrx6UFmf0"
-				data-background-interactive data-menu-title="Лекция на Youtube">
-				</section>-->
-
-				<section data-markdown data-separator-notes="^Note:">
-					<script type="text/template">
-						Среднее арифметическое
-						-----------
-						
-						Note:
-						Определения
-					</script>
-				</section>
-
-				<section data-markdown data-separator-notes="^Note:">
-					<script type="text/template">
-						### Среднее арифметическое
-
-						— число, равное сумме всех чисел множества,
-						делённой на их количество. Является одной из
-						наиболее распространённых мер центральной
-						тенденции.
-
-						$$
-						M_x = \dfrac{\sum X_i}{n}
-						$$
-
-						Note:
-						Определения
-					</script>
-				</section>
-
-				<section data-markdown data-separator-notes="^Note:">
-					<script type="text/template">
-						Программа
-						---------
-
-						Среднее арифметическое:
-
-						${x_1}$ <input type="number" id="x1">
-						${x_2}$ <input type="number" id="x2">
-						${x_3}$ <input type="number" id="x3"> <input type="button" id="arithMedResult" value="Вычислить">
-
-						${Sr}$ = <output id="arithMedRes">
-
-						Note:
-						Определения
-					</script>
-				</section>
-
-				<section data-markdown data-separator-notes="^Note:">
-					<script type="text/template">
-						Программа
-						---------
-						```
-						let meduimCol = 3;
-						let arithMediumFunc = (a, b, c) => ((a + b + c) / meduimCol);
-
-						arithMedResult.onclick = function () {
-							arithMedRes.innerHTML = arithMediumFunc(parseInt(x1.value), parseInt(x2.value), parseInt(x3.value));
-						}
-						```
-					</script>
-				</section>
-
-				<section data-markdown data-separator-notes="^Note:">
-					<script type="text/template">
-						### Примеры
-
-						В распределении 3, 4, 5, 6, 7 среднее арифметическое будет равно
-
-						$$
-						M_x = \dfrac{3+4+5+6+7}{5} = \dfrac{25}{5} = 5
-						$$
-
-						Note:
-						Примеры
-					</script>
-				</section>
-
-				<section data-markdown data-separator-notes="^Note:">
-					<script type="text/template">
-						Медиана
-						-----------
-
-						Note:
-						Определения
-					</script>
-				</section>
-
-				<section data-markdown data-separator-notes="^Note:">
-					<script type="text/template">
-						### Медиана (от лат. mediāna — середина)
-
-						— число, характеризующее выборку (например, набор чисел).
-						Если все элементы выборки различны, то медиана — это
-						такое число выборки, что ровно половина из элементов выборки
-						больше него, а другая половина меньше него. В более общем
-						случае медиану можно найти, упорядочив элементы выборки
-						по возрастанию или убыванию и взяв средний элемент.
-
-						Note:
-						Определения
-					</script>
-				</section>
-
-				<section data-markdown data-separator-notes="^Note:">
-					<script type="text/template">
-						Существуют и такие распределения, которые не имеют моды,
-						их называют антимодальными. Медианой случайной величины
-						называют то ее значения, для которого выполняются
-						равенство вероятностей событий, то есть, плотность
-						вероятностей справа и слева одинаковы и равны половине (0,5).
-					</script>
-				</section>
-
-				<section data-markdown data-separator-notes="^Note:">
-					<script type="text/template">
-						$$
-						P({-\infty} < X_p < M_e) = P(M_e < X_p < {\infty})
-						$$
-						$$
-						F(M_e) - F({-\infty}) = F({\infty}) - F(M_e)
-						$$
-						$$
-						F(M_e) = 1 - F(M_e) => 2F(M_e) = 1
-						$$
-						$$
-						F(M_e) = 0,5
-						$$
-					</script>
-				</section>
-
-				<section data-markdown data-separator-notes="^Note:">
-					<script type="text/template">
-						### Примеры
-
-						Например, выборка {11, 9, 3, 5, 5} после упорядочивания
-						превращается в {3, 5, 5, 9, 11} и её медианой является
-						число 5. Если в выборке чётное число элементов, медиана
-						может быть не определена однозначно: для числовых данных
-						чаще всего используют полусумму двух соседних
-						значений (то есть медиану набора {1, 3, 5, 7} принимают равной 4)
-					</script>
-				</section>
-
-				<section data-markdown data-separator-notes="^Note:">
-					<script type="text/template">
-						Мода
-						-----------
-
-						Note:
-						Определения
-					</script>
-				</section>
-
-				<section data-markdown data-separator-notes="^Note:">
-					<script type="text/template">
-						### Мода
-
-						— значение во множестве наблюдений, которое встречается
-						наиболее часто. (Мода = типичность.)
-
-						Note:
-						Определения
-					</script>
-				</section>
-
-				<section data-markdown data-separator-notes="^Note:">
-					<script type="text/template">
-						Иногда в совокупности встречается более чем одна
-						мода (например: 6, 2, 6, 6, 8, 9, 9, 9, 0; мода — 6 и 9).
-						В этом случае можно сказать, что совокупность мультимодальна.
-						Из структурных средних величин только мода обладает таким
-						уникальным свойством. Как правило, мультимодальность
-						указывает на то, что набор данных не подчиняется
-						нормальному распределению.
-					</script>
-				</section>
-
-				<section data-markdown data-separator-notes="^Note:">
-					<script type="text/template">
-						$$
-						f(M_0) = max f(x)
-						$$
-					</script>
-				</section>
-
-				<section data-markdown data-separator-notes="^Note:">
-					<script type="text/template">
-						Мода как средняя величина употребляется чаще для данных,
-						имеющих нечисловую природу. Среди перечисленных цветов
-						автомобилей — белый, чёрный, синий металлик, белый,
-						синий металлик, белый — мода будет равна белому цвету.
-						При экспертной оценке с её помощью определяют наиболее популярн
-					</script>
-				</section>
-
-				<section data-background-iframe="https://www.youtube.com/embed/aE9tlkOJav4"
-						 data-background-interactive data-menu-title="Лекция на Youtube">
-				</section>
-
-				<section data-markdown data-separator-notes="^Note:">
-					<script type="text/template">
-						Математическое ожидание
-						-----------
-
-						Note:
-						Определения
-					</script>
-				</section>
-
-				<section data-markdown data-separator-notes="^Note:">
-					<script type="text/template">
-						### Математическое ожидание
-
-						— среднее значение случайной величины (распределение
-						вероятностей стационарной случайной величины) при
-						стремлении количества выборок или количества измерений
-						(иногда говорят — количества испытаний) её к бесконечности.
-
-						Note:
-						Определения
-					</script>
-				</section>
-
-				<section data-markdown data-separator-notes="^Note:">
-					<script type="text/template">
-						Среднее арифметическое одномерной случайной величины
-						конечного числа испытаний обычно называют оценкой
-						математического ожидания. При стремлении числа испытаний
-						стационарного случайного процесса к бесконечности
-						оценка математического ожидания стремится к
-						математическому ожиданию.
-					</script>
-				</section>
-
-				<section data-markdown data-separator-notes="^Note:">
-					<script type="text/template">
-						Математическое ожидание M<sub>x</sub> случайной величины x равно
-
-						$$
-						M_x = \sum_{i=1}^k p_ix_i
-						$$
-					</script>
-				</section>
-
-				<section data-markdown data-separator-notes="^Note:">
-					<script type="text/template">
-						Дисперсия
-						-----------
-
-						Note:
-						Определения
-					</script>
-				</section>
-
-				<section data-markdown data-separator-notes="^Note:">
-					<script type="text/template">
-						### Дисперсией случайной величины x
-
-						называется среднее значение квадрата
-						отклонения случайной величины от её
-						математического ожидания:
-
-						Note:
-						Определения
-					</script>
-				</section>
-
-				<section data-markdown data-separator-notes="^Note:">
-					<script type="text/template">
-						$$
-						D(X) = M(X^2) - (M(X))^2
-						$$
-					</script>
-				</section>
-
-				<section data-markdown data-separator-notes="^Note:">
-					<script type="text/template">
-						Используя вероятности p<sub>i</sub> того, что величина x
-						принимает значения x<sub>i</sub>, эту формулу можно
-						переписать следующим образом:
-						$$
-						D_x = \sum_{i=1}^k p_i(x_i - M_x)^2
-						$$
-					</script>
-				</section>
-
-				<section data-background-iframe="https://www.youtube.com/embed/PawhrJ92alc"
-						 data-background-interactive data-menu-title="Лекция на Youtube">
-				</section>
-
-				<section data-markdown data-separator-notes="^Note:">
-					<script type="text/template">
-						Приложение
-						----------
-
-					</script>
-				</section>
-				
-				<section data-background-image="image/1.jpg" data-menu-title="Книга">
-				</section>
-				
-				<section data-background-image="image/2.jpg" data-menu-title="Калькулятор">
-				</section>
-				
-				<section data-background-image="image/3.jpg" data-menu-title="Пи">
-				</section>
-				
-				<section data-background-image="image/4.jpg" data-menu-title="Math">
-				</section>
-				
-				<section data-background-image="image/5.jpg" data-menu-title="Карандаши">
-				</section>
-				
-				<section data-background-image="image/6.jpg" data-menu-title="Линейки">
-				</section>
-				
-				<section data-background-image="image/7.jpg" data-menu-title="Доска">
-				</section>
-				
-				<section data-background-image="image/8.jpg" data-menu-title="Лиса">
-				</section>
-
-				<section data-background-image="image/9.jpg" data-menu-title="Числа">
-				</section>
-				
-				<section data-background-image="image/10.jpg" data-menu-title="Тригонометрический круг">
-				</section>
-				
-				<section data-background-image="image/11.jpg" data-menu-title="Крестики-нолики">
-				</section>
-				
-				<section data-background-image="image/12.jpg" data-menu-title="Знаки">
-				</section>
-				
-				<section data-background-image="image/13.jpg" data-menu-title="Числа">
-				</section>
-				
-				<section data-background-image="image/14.jpg" data-menu-title="Я люблю математику">
-				</section>
-				
-				<section data-background-image="image/15.jpg" data-menu-title="Числа Фибоначчи">
-				</section>
-				
-				<section data-markdown data-separator-notes="^Note:">
-					<script type="text/template">
-						Спасибо за внимание
-						-------------------
-
-					</script>
-				</section>
-
-				
-			</div>
-		</div>
-
-		<!-- load js -->
-		<script src="lib/js/head.min.js"></script>
-		<script src="js/reveal.js"></script>
-
-		<script src="js/ranec.js"></script>
-		<script src="js/lib.js"></script>
-
-		<script>
-			// More info about config & dependencies:
-			// - https://github.com/hakimel/reveal.js#configuration
-			// - https://github.com/hakimel/reveal.js#dependencies
-			Reveal.initialize({
-				
-				// save slide
-				history: true,
-				slideNumber: true,
-				touch: true,
-
-				// show katex error
-				math: {
-					notificationsEnabled: true,
-				},
-
-           menu: {
-                side: 'left', //Расположение меню
-                numbers: true, //Нумерация слайдов
-                markers: true, //Маркер посещения
-                titleSelector: 'h1, h2, h3, h4, h5, h6', //Заголовки, отображаемые в меню
-                useTextContentForMissingTitles: true, //Если заголовка нет, то подставляем первые слова слайда
-                hideMissingTitles: false, //Если заголовка нет, то скрываем слайд из меню
-                transitions: true, //Установить меню анимации
-                openButton: true, //Скрыть кнопку меню
-                keyboard: true, //Открытие меню по кнопке m
-                // themes: [{
-                //     name: 'Black',
-                //     theme: 'css/theme/black.css'
-                // }, {
-                //     name: 'White',
-                //     theme: 'css/theme/white.css'
-                // }, {
-                //     name: 'League',
-                //     theme: 'css/theme/league.css'
-                // }, {
-                //     name: 'Sky',
-                //     theme: 'css/theme/sky.css'
-                // }, {
-                //     name: 'Beige',
-                //     theme: 'css/theme/beige.css'
-                // }, {
-                //     name: 'Simple',
-                //     theme: 'css/theme/simple.css'
-                // }, {
-                //     name: 'Serif',
-                //     theme: 'css/theme/serif.css'
-                // }, {
-                //     name: 'Blood',
-                //     theme: 'css/theme/blood.css'
-                // }, {
-                //     name: 'Night',
-                //     theme: 'css/theme/night.css'
-                // }, {
-                //     name: 'Moon',
-                //     theme: 'css/theme/moon.css'
-                // }, {
-                //     name: 'Solarized',
-                //     theme: 'css/theme/solarized.css'
-                // }],
-            },
-
-				// load dependencies
-				dependencies: [
-					{
-						// tex
-						src: 'plugin/math-katex/math-katex.js', 
-						async: true,
-						callback: () => {
-							// solve problem with katex 
-							let section = document.querySelectorAll('section script');
-								section.forEach( (item, i) => {
-									section[i].innerHTML = section[i].innerHTML
-										.replace(/\\/g,'\\\\')
-										.replace(/_/g,'\\_')
-										.replace(/\{/g,'\\\{')
-										.replace(/\}/g,'\\\}');
-							});
-						},
-					}, { 
-						//markdown
-						src: 'plugin/markdown/marked.js',
-					}, { 
-						src: 'plugin/markdown/markdown.js', 
-						async: true,
-					},{ 
-						//Menu
-						src: 'plugin/menu/menu.js',
-						async: true
-					},{ 
-						//notes
-						src: 'plugin/notes/notes.js', 
-						async: true
-					}, { 
-						// highlight syntax
-						src: 'plugin/highlight/highlight.js', 
-						async: true, 
-						callback: () => {
-							let code = document.querySelectorAll('code');
-							code.forEach ( (item, i) => {
-								code[i].innerHTML = code[i].innerHTML
-									.replace(/\\{/g,'{')
-									.replace(/\\}/g,'}');
-							});
-							hljs.initHighlightingOnLoad();
-						}
-					}
-				]
-			});
-
-			let meduimCol = 3;
-			let arithMediumFunc = (a, b, c) => ((a + b + c) / meduimCol);
-
-			//Запускаем программы только после полной загрузки
-			window.onload = () =>  {
-
-				arithMedResult.onclick = function () {
-					arithMedRes.innerHTML = arithMediumFunc(parseInt(x1.value), parseInt(x2.value), parseInt(x3.value));
-				}
-			}
-		</script>
-	</body>
+<head>
+    <!-- meta -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <!-- title -->
+    <title>Математическая статистика</title>
+
+    <!-- load style -->
+    <link rel="stylesheet" href="css/reveal.css">
+    <link rel="stylesheet" href="css/theme/my.css">
+
+    <!-- Theme used for syntax highlighting of code -->
+    <link rel="stylesheet" href="lib/css/zenburn.css">
+
+    <!-- Printing and PDF exports -->
+    <script>
+        var link = document.createElement( 'link' );
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+        document.getElementsByTagName( 'head' )[0].appendChild( link );
+    </script>
+
+    <style>
+        .left {
+            float: left;
+            margin-left: 60px;
+        }
+        .right {
+            float: right;
+            margin-right: 60px;
+        }
+        .clear {
+            clear: both;
+        }
+        .reveal table.tic-toe {
+            border-collapse: separate !important;
+        }
+        td {
+            width: 40px;
+            height: 40px;
+            text-align: center !important;
+        }
+        td:nth-child(2) {
+            border-left: 1px solid white;
+            border-right: 1px solid white;
+        }
+    </style>
+</head>
+<body>
+<div class="reveal">
+    <div class="slides">
+        <section data-markdown data-separator-notes="^Note:">
+            <script type="text/template">
+                Математическая статистика
+                ==================
+
+                Note:
+                Титульный слайд
+            </script>
+        </section>
+
+        <section data-markdown data-separator-notes="^Note:">
+            <script type="text/template">
+                ### Математическая статистика —
+
+                наука, разрабатывающая математические методы
+                систематизации и использования статистических
+                данных для научных и практических выводов.
+            </script>
+        </section>
+
+        <section data-markdown data-separator-notes="^Note:">
+            <script type="text/template">
+                ### Определение
+
+                Во многих своих разделах математическая статистика
+                опирается на теорию вероятностей, дающую возможность
+                оценить надёжность и точность выводов, делаемых на
+                основании ограниченного статистического материала
+                (напр., оценить необходимый объём выборки для получения
+                результатов требуемой точности при выборочном обследовании).
+            </script>
+        </section>
+
+        <section data-markdown data-separator-notes="^Note:">
+            <script type="text/template">
+                ### Определение
+
+                Генеральная совокупность рассматривается как случайная
+                величина ξ, а выборка – как n-мерная случайная
+                величина (ξ1, . . . , ξn), компоненты которой независимы
+                и одинаково распределены (так же как ξ).
+            </script>
+        </section>
+
+        <section data-background-iframe="https://www.youtube.com/embed/mOLZP4DP7JA"
+                 data-background-interactive data-menu-title="Лекция на Youtube">
+        </section>
+
+        <section data-markdown data-separator-notes="^Note:">
+            <script type="text/template">
+                Выборка
+                ==================
+            </script>
+        </section>
+
+        <section data-markdown data-separator-notes="^Note:">
+            <script type="text/template">
+                ### Выборка или выборочная совокупность —
+
+                часть генеральной совокупности элементов,
+                которая охватывается экспериментом (наблюдением, опросом).
+            </script>
+        </section>
+
+
+        <section data-markdown data-separator-notes="^Note:">
+            <script type="text/template">
+                ### Пример 1
+
+                В обувном магазине за день продали 30 пар
+                мужской обуви следующих размеров: 39, 41, 40, 42, 41,
+                40, 42, 44, 42, 43, 42, 41, 43, 39, 42, 39, 41, 43,
+                41, 38, 43, 42, 41, 40, 41, 38, 44, 40, 39, 44.
+            </script>
+        </section>
+
+        <section data-markdown data-separator-notes="^Note:">
+            <script type="text/template">
+                ### Решение
+
+                Проведем группировку по отдельным значениям признака,
+                то есть по размеру обуви (дискретная группировка):
+
+                <div>
+                    <table>
+                        <tr class="border-table">
+                            <td>x<sub>i</sub></td>
+                            <td>38</td>
+                            <td>39</td>
+                            <td>40</td>
+                            <td>41</td>
+                            <td>42</td>
+                            <td>43</td>
+                            <td>44</td>
+                            <td>&sum;</td>
+                        </tr>
+                        <tr class="border-table">
+                            <td>m<sub>i</sub></td>
+                            <td>2</td>
+                            <td>4</td>
+                            <td>5</td>
+                            <td>7</td>
+                            <td>6</td>
+                            <td>4</td>
+                            <td>3</td>
+                            <td>30</td>
+                        </tr>
+                        <tr class="border-table">
+                            <td>h<sub>i</sub></td>
+                            <td>0,067</td>
+                            <td>0,133</td>
+                            <td>0,133</td>
+                            <td>0,233</td>
+                            <td>0,2</td>
+                            <td>0,133</td>
+                            <td>0,1</td>
+                            <td>1</td>
+                        </tr>
+                    </table>
+                </div>
+            </script>
+        </section>
+
+        <!--<section data-background-iframe="https://www.youtube.com/embed/sQvrx6UFmf0"
+        data-background-interactive data-menu-title="Лекция на Youtube">
+        </section>-->
+
+        <section data-markdown data-separator-notes="^Note:">
+            <script type="text/template">
+                Среднее арифметическое
+                -----------
+
+                Note:
+                Определения
+            </script>
+        </section>
+
+        <section data-markdown data-separator-notes="^Note:">
+            <script type="text/template">
+                ### Среднее арифметическое
+
+                — число, равное сумме всех чисел множества,
+                делённой на их количество. Является одной из
+                наиболее распространённых мер центральной
+                тенденции.
+
+                $$
+                M_x = \dfrac{\sum X_i}{n}
+                $$
+
+                Note:
+                Определения
+            </script>
+        </section>
+
+        <section data-markdown data-separator-notes="^Note:">
+            <script type="text/template">
+                Программа
+                ---------
+
+                Среднее арифметическое:
+
+                ${x_1}$ <input type="number" id="x1">
+                ${x_2}$ <input type="number" id="x2">
+                ${x_3}$ <input type="number" id="x3"> <input type="button" id="arithMedResult" value="Вычислить">
+
+                ${Sr}$ = <output id="arithMedRes">
+            </script>
+        </section>
+
+        <section data-markdown data-separator-notes="^Note:">
+            <script type="text/template">
+                Программа
+                ---------
+                ```
+                let meduimCol = 3;
+                let arithMediumFunc = (a, b, c) => ((a + b + c) / meduimCol);
+
+                arithMedResult.onclick = function () {
+                arithMedRes.innerHTML = arithMediumFunc(parseInt(x1.value), parseInt(x2.value), parseInt(x3.value));
+                }
+                ```
+            </script>
+        </section>
+
+        <section data-markdown data-separator-notes="^Note:">
+            <script type="text/template">
+                ### Примеры
+
+                В распределении 3, 4, 5, 6, 7 среднее арифметическое будет равно
+
+                $$
+                M_x = \dfrac{3+4+5+6+7}{5} = \dfrac{25}{5} = 5
+                $$
+
+                Note:
+                Примеры
+            </script>
+        </section>
+
+        <section data-markdown data-separator-notes="^Note:">
+            <script type="text/template">
+                Медиана
+                -----------
+
+                Note:
+                Определения
+            </script>
+        </section>
+
+        <section data-markdown data-separator-notes="^Note:">
+            <script type="text/template">
+                ### Медиана (от лат. mediāna — середина)
+
+                — число, характеризующее выборку (например, набор чисел).
+                Если все элементы выборки различны, то медиана — это
+                такое число выборки, что ровно половина из элементов выборки
+                больше него, а другая половина меньше него. В более общем
+                случае медиану можно найти, упорядочив элементы выборки
+                по возрастанию или убыванию и взяв средний элемент.
+
+                Note:
+                Определения
+            </script>
+        </section>
+
+        <section data-markdown data-separator-notes="^Note:">
+            <script type="text/template">
+                ### Определение
+
+                Существуют и такие распределения, которые не имеют моды,
+                их называют антимодальными. Медианой случайной величины
+                называют то ее значения, для которого выполняются
+                равенство вероятностей событий, то есть, плотность
+                вероятностей справа и слева одинаковы и равны половине (0,5).
+            </script>
+        </section>
+
+        <section data-markdown data-separator-notes="^Note:">
+            <script type="text/template">
+                ### Определение
+
+                $$
+                P({-\infty} < X_p < M_e) = P(M_e < X_p < {\infty})
+                $$
+                $$
+                F(M_e) - F({-\infty}) = F({\infty}) - F(M_e)
+                $$
+                $$
+                F(M_e) = 1 - F(M_e) => 2F(M_e) = 1
+                $$
+                $$
+                F(M_e) = 0,5
+                $$
+            </script>
+        </section>
+
+        <section data-markdown data-separator-notes="^Note:">
+            <script type="text/template">
+                ### Примеры
+
+                Например, выборка {11, 9, 3, 5, 5} после упорядочивания
+                превращается в {3, 5, 5, 9, 11} и её медианой является
+                число 5. Если в выборке чётное число элементов, медиана
+                может быть не определена однозначно: для числовых данных
+                чаще всего используют полусумму двух соседних
+                значений (то есть медиану набора {1, 3, 5, 7} принимают равной 4)
+            </script>
+        </section>
+
+        <section data-markdown data-separator-notes="^Note:">
+            <script type="text/template">
+                Мода
+                -----------
+
+                Note:
+                Определения
+            </script>
+        </section>
+
+        <section data-markdown data-separator-notes="^Note:">
+            <script type="text/template">
+                ### Мода
+
+                — значение во множестве наблюдений, которое встречается
+                наиболее часто. (Мода = типичность.)
+
+                Note:
+                Определения
+            </script>
+        </section>
+
+        <section data-markdown data-separator-notes="^Note:">
+            <script type="text/template">
+                ### Определение
+
+                Иногда в совокупности встречается более чем одна
+                мода (например: 6, 2, 6, 6, 8, 9, 9, 9, 0; мода — 6 и 9).
+                В этом случае можно сказать, что совокупность мультимодальна.
+                Из структурных средних величин только мода обладает таким
+                уникальным свойством. Как правило, мультимодальность
+                указывает на то, что набор данных не подчиняется
+                нормальному распределению.
+            </script>
+        </section>
+
+        <section data-markdown data-separator-notes="^Note:">
+            <script type="text/template">
+                ### Определение
+
+                $$
+                f(M_0) = max f(x)
+                $$
+            </script>
+        </section>
+
+        <section data-markdown data-separator-notes="^Note:">
+            <script type="text/template">
+                ### Определение
+
+                Мода как средняя величина употребляется чаще для данных,
+                имеющих нечисловую природу. Среди перечисленных цветов
+                автомобилей — белый, чёрный, синий металлик, белый,
+                синий металлик, белый — мода будет равна белому цвету.
+                При экспертной оценке с её помощью определяют наиболее популярн
+            </script>
+        </section>
+
+        <section data-background-iframe="https://www.youtube.com/embed/aE9tlkOJav4"
+                 data-background-interactive data-menu-title="Лекция на Youtube">
+        </section>
+
+        <section data-markdown data-separator-notes="^Note:">
+            <script type="text/template">
+                Математическое ожидание
+                -----------
+
+                Note:
+                Определения
+            </script>
+        </section>
+
+        <section data-markdown data-separator-notes="^Note:">
+            <script type="text/template">
+                ### Математическое ожидание
+
+                — среднее значение случайной величины (распределение
+                вероятностей стационарной случайной величины) при
+                стремлении количества выборок или количества измерений
+                (иногда говорят — количества испытаний) её к бесконечности.
+
+                Note:
+                Определения
+            </script>
+        </section>
+
+        <section data-markdown data-separator-notes="^Note:">
+            <script type="text/template">
+                ### Определение
+
+                Среднее арифметическое одномерной случайной величины
+                конечного числа испытаний обычно называют оценкой
+                математического ожидания. При стремлении числа испытаний
+                стационарного случайного процесса к бесконечности
+                оценка математического ожидания стремится к
+                математическому ожиданию.
+            </script>
+        </section>
+
+        <section data-markdown data-separator-notes="^Note:">
+            <script type="text/template">
+                ### Определение
+
+                Математическое ожидание M<sub>x</sub> случайной величины x равно
+
+                $$
+                M_x = \sum_{i=1}^k p_ix_i
+                $$
+            </script>
+        </section>
+
+        <section data-markdown data-separator-notes="^Note:">
+            <script type="text/template">
+                Дисперсия
+                -----------
+
+                Note:
+                Определения
+            </script>
+        </section>
+
+        <section data-markdown data-separator-notes="^Note:">
+            <script type="text/template">
+                ### Дисперсией случайной величины x
+
+                называется среднее значение квадрата
+                отклонения случайной величины от её
+                математического ожидания:
+
+                Note:
+                Определения
+            </script>
+        </section>
+
+        <section data-markdown data-separator-notes="^Note:">
+            <script type="text/template">
+                ### Определение
+
+                $$
+                D(X) = M(X^2) - (M(X))^2
+                $$
+            </script>
+        </section>
+
+        <section data-markdown data-separator-notes="^Note:">
+            <script type="text/template">
+                ### Определение
+
+                Используя вероятности p<sub>i</sub> того, что величина x
+                принимает значения x<sub>i</sub>, эту формулу можно
+                переписать следующим образом:
+                $$
+                D_x = \sum_{i=1}^k p_i(x_i - M_x)^2
+                $$
+            </script>
+        </section>
+
+        <section data-background-iframe="https://www.youtube.com/embed/PawhrJ92alc"
+                 data-background-interactive data-menu-title="Лекция на Youtube">
+        </section>
+
+        <section data-markdown data-separator-notes="^Note:">
+            <script type="text/template">
+                Приложение
+                ----------
+
+            </script>
+        </section>
+
+        <section data-background-image="image/1.jpg" data-menu-title="Книга">
+        </section>
+
+        <section data-background-image="image/2.jpg" data-menu-title="Калькулятор">
+        </section>
+
+        <section data-background-image="image/3.jpg" data-menu-title="Пи">
+        </section>
+
+        <section data-background-image="image/4.jpg" data-menu-title="Math">
+        </section>
+
+        <section data-background-image="image/5.jpg" data-menu-title="Карандаши">
+        </section>
+
+        <section data-background-image="image/6.jpg" data-menu-title="Линейки">
+        </section>
+
+        <section data-background-image="image/7.jpg" data-menu-title="Доска">
+        </section>
+
+        <section data-background-image="image/8.jpg" data-menu-title="Лиса">
+        </section>
+
+        <section data-background-image="image/9.jpg" data-menu-title="Числа">
+        </section>
+
+        <section data-background-image="image/10.jpg" data-menu-title="Тригонометрический круг">
+        </section>
+
+        <section data-background-image="image/11.jpg" data-menu-title="Крестики-нолики">
+        </section>
+
+        <section data-background-image="image/12.jpg" data-menu-title="Знаки">
+        </section>
+
+        <section data-background-image="image/13.jpg" data-menu-title="Числа">
+        </section>
+
+        <section data-background-image="image/14.jpg" data-menu-title="Я люблю математику">
+        </section>
+
+        <section data-background-image="image/15.jpg" data-menu-title="Числа Фибоначчи">
+        </section>
+
+        <section data-markdown data-separator-notes="^Note:">
+            <script type="text/template">
+                Спасибо за внимание
+                -------------------
+
+            </script>
+        </section>
+
+
+    </div>
+</div>
+
+<!-- load js -->
+<script src="lib/js/head.min.js"></script>
+<script src="js/reveal.js"></script>
+
+<script src="js/ranec.js"></script>
+<script src="js/lib.js"></script>
+
+<script>
+    // More info about config & dependencies:
+    // - https://github.com/hakimel/reveal.js#configuration
+    // - https://github.com/hakimel/reveal.js#dependencies
+    Reveal.initialize({
+
+        // save slide
+        history: true,
+        slideNumber: true,
+        touch: true,
+        // show katex error
+        math: {
+            notificationsEnabled: true,
+        },
+        menu: {
+            side: 'left', //Расположение меню
+            numbers: true, //Нумерация слайдов
+            markers: true, //Маркер посещения
+            titleSelector: 'h1, h2, h3, h4, h5, h6', //Заголовки, отображаемые в меню
+            useTextContentForMissingTitles: true, //Если заголовка нет, то подставляем первые слова слайда
+            hideMissingTitles: false, //Если заголовка нет, то скрываем слайд из меню
+            transitions: true, //Установить меню анимации
+            openButton: true, //Скрыть кнопку меню
+            keyboard: true, //Открытие меню по кнопке m
+            // themes: [{
+            //     name: 'Black',
+            //     theme: 'css/theme/black.css'
+            // }, {
+            //     name: 'White',
+            //     theme: 'css/theme/white.css'
+            // }, {
+            //     name: 'League',
+            //     theme: 'css/theme/league.css'
+            // }, {
+            //     name: 'Sky',
+            //     theme: 'css/theme/sky.css'
+            // }, {
+            //     name: 'Beige',
+            //     theme: 'css/theme/beige.css'
+            // }, {
+            //     name: 'Simple',
+            //     theme: 'css/theme/simple.css'
+            // }, {
+            //     name: 'Serif',
+            //     theme: 'css/theme/serif.css'
+            // }, {
+            //     name: 'Blood',
+            //     theme: 'css/theme/blood.css'
+            // }, {
+            //     name: 'Night',
+            //     theme: 'css/theme/night.css'
+            // }, {
+            //     name: 'Moon',
+            //     theme: 'css/theme/moon.css'
+            // }, {
+            //     name: 'Solarized',
+            //     theme: 'css/theme/solarized.css'
+            // }],
+        },
+        // load dependencies
+        dependencies: [
+            {
+                // tex
+                src: 'plugin/math-katex/math-katex.js',
+                async: true,
+                callback: () => {
+                    // solve problem with katex
+                    let section = document.querySelectorAll('section script');
+                    section.forEach( (item, i) => {
+                        section[i].innerHTML = section[i].innerHTML
+                            .replace(/\\/g,'\\\\')
+                            .replace(/_/g,'\\_')
+                            .replace(/\{/g,'\\\{')
+                            .replace(/\}/g,'\\\}');
+                    });
+                },
+            }, {
+                //markdown
+                src: 'plugin/markdown/marked.js',
+            }, {
+                src: 'plugin/markdown/markdown.js',
+                async: true,
+            },{
+                //Menu
+                src: 'plugin/menu/menu.js',
+                async: true
+            },{
+                //notes
+                src: 'plugin/notes/notes.js',
+                async: true
+            }, {
+                // highlight syntax
+                src: 'plugin/highlight/highlight.js',
+                async: true,
+                callback: () => {
+                    let code = document.querySelectorAll('code');
+                    code.forEach ( (item, i) => {
+                        code[i].innerHTML = code[i].innerHTML
+                            .replace(/\\{/g,'{')
+                            .replace(/\\}/g,'}');
+                    });
+                    hljs.initHighlightingOnLoad();
+                }
+            }
+        ]
+    });
+    let meduimCol = 3;
+    let arithMediumFunc = (a, b, c) => ((a + b + c) / meduimCol);
+    //Запускаем программы только после полной загрузки
+    window.onload = () =>  {
+        arithMedResult.onclick = function () {
+            arithMedRes.innerHTML = arithMediumFunc(parseInt(x1.value), parseInt(x2.value), parseInt(x3.value));
+        }
+    }
+</script>
+</body>
 </html>
